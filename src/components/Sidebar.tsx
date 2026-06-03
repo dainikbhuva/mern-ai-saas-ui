@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
-import { Menu, X, LayoutDashboard, LogOut, History } from 'lucide-react'
+import { LayoutDashboard, LogOut, History } from 'lucide-react'
 
 interface SidebarProps {
   isOpen: boolean

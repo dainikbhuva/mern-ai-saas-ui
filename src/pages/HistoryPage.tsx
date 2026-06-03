@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { aiAPI } from '../services/api'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
-import { Copy, Trash2 } from 'lucide-react'
+import { Copy } from 'lucide-react'
 
 interface Generation {
   id: string

@@ -4,14 +4,6 @@ import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import { TrendingUp, Clock, Zap } from 'lucide-react'
 
-interface Generation {
-  id: string
-  type: string
-  provider: string
-  output: string
-  createdAt: string
-}
-
 interface QuotaData {
   plan: string
   monthlyQuota: number
@@ -27,16 +19,14 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [quota, setQuota] = useState<QuotaData | null>(null)
-  const [history, setHistory] = useState<Generation[]>([])
   const [output, setOutput] = useState('')
   const [showOutput, setShowOutput] = useState(false)
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [quotaRes, historyRes] = await Promise.all([aiAPI.getQuota(), aiAPI.getHistory()])
+        const quotaRes = await aiAPI.getQuota()
         if (quotaRes.data.success) setQuota(quotaRes.data.data)
-        if (historyRes.data.success) setHistory(historyRes.data.data.generations)
       } catch (err) {
         console.error('Failed to load data:', err)
       }
@@ -62,9 +52,8 @@ export default function DashboardPage() {
         setShowOutput(true)
         setProductDescription('')
         setTargetAudience('')
-        const [newQuota, newHistory] = await Promise.all([aiAPI.getQuota(), aiAPI.getHistory()])
+        const newQuota = await aiAPI.getQuota()
         if (newQuota.data.success) setQuota(newQuota.data.data)
-        if (newHistory.data.success) setHistory(newHistory.data.data.generations)
       } else {
         setError(response.data.error?.message || 'Generation failed')
       }
