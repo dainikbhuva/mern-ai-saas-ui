@@ -1,7 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { useAuth } from './auth/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
-import DashboardPage from './pages/DashboardPage'
+import HomePage from './pages/HomePage'
+import AdsPage from './pages/AdsPage'
+import ContentWriterPage from './pages/ContentWriterPage'
 import HistoryPage from './pages/HistoryPage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
@@ -26,7 +28,25 @@ export default function App() {
         path="/dashboard"
         element={
           <ProtectedRoute>
-            <DashboardPage />
+            <HomePage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/ads"
+        element={
+          <ProtectedRoute>
+            <AdsPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/content"
+        element={
+          <ProtectedRoute>
+            <ContentWriterPage />
           </ProtectedRoute>
         }
       />

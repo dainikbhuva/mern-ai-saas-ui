@@ -25,16 +25,30 @@ api.interceptors.response.use(
   },
 );
 
+export type ContentType = "blog" | "social_media" | "product_description" | "seo";
+
+export interface GenerateContentPayload {
+  type: ContentType;
+  topic?: string;
+  tone?: string;
+  keywords?: string;
+  audience?: string;
+  platform?: string;
+  productName?: string;
+  features?: string;
+}
+
 export const aiAPI = {
-  generateAds: (
-    productDescription: string,
-    targetAudience: string,
-    provider: "gemini" | "openai" = "gemini",
-  ) =>
+  generateAds: (productDescription: string, targetAudience: string) =>
     api.post("/api/ai/generate/ads", {
       productDescription,
       targetAudience,
-      provider,
+      provider: "gemini",
+    }),
+  generateContent: (payload: GenerateContentPayload) =>
+    api.post("/api/ai/generate/content", {
+      ...payload,
+      provider: "gemini",
     }),
   getHistory: () => api.get("/api/ai/history"),
   getQuota: () => api.get("/api/ai/quota"),

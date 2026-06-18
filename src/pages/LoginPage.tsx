@@ -51,9 +51,9 @@ export default function LoginPage() {
       
       <div className="hidden md:flex flex-col justify-between bg-gradient-to-br from-indigo-600 to-violet-600 p-10 text-white">
         <div>
-          <h1 className="text-3xl font-bold">AI Marketing SaaS</h1>
+          <h1 className="text-3xl font-bold">MarketingAI</h1>
           <p className="mt-4 text-sm opacity-90">
-            Generate SEO content, ads & social posts with AI.
+            AI Ads Copy Generator & Content Writer — blogs, social posts, SEO & product descriptions powered by Gemini.
           </p>
         </div>
         <p className="text-xs opacity-70">© {new Date().getFullYear()}</p>

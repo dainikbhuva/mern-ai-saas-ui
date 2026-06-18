@@ -51,16 +51,16 @@ export default function RegisterPage() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-900">
       <div className="mx-auto flex min-h-screen w-full max-w-6xl items-center justify-center px-4 py-8 sm:py-12">
         <div className="grid w-full grid-cols-1 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md md:grid-cols-2">
-          <div className="hidden flex-col justify-between bg-gradient-to-br from-emerald-600 to-teal-600 p-10 text-white md:flex">
+          <div className="hidden flex-col justify-between bg-gradient-to-br from-indigo-600 to-violet-600 p-10 text-white md:flex">
             <div>
-              <div className="text-sm font-semibold tracking-wide">AI Marketing SaaS</div>
+              <div className="text-sm font-semibold tracking-wide">MarketingAI</div>
               <h1 className="mt-4 text-3xl font-semibold leading-tight">Create your account</h1>
               <p className="mt-3 text-sm text-white/90">
-                Free plan includes 5 AI generations per month. Upgrade to Pro for unlimited access.
+                Free plan: 5 AI generations/month. Generate ads, blogs, social posts, SEO & product copy.
               </p>
             </div>
 
-            <div className="text-xs text-white/80">© {new Date().getFullYear()} AI Marketing SaaS</div>
+            <div className="text-xs text-white/80">© {new Date().getFullYear()} MarketingAI</div>
           </div>
 
           <div className="p-6 md:p-10">
@@ -83,7 +83,7 @@ export default function RegisterPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   type="email"
                   placeholder="you@example.com"
-                  className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/15"
+                  className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-indigo-600 focus:ring-4 focus:ring-indigo-600/15"
                   autoComplete="email"
                   disabled={loading}
                 />
@@ -97,14 +97,14 @@ export default function RegisterPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     type={showPassword ? 'text' : 'password'}
                     placeholder="Minimum 6 characters"
-                    className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 pr-14 text-sm outline-none transition focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/15"
+                    className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 pr-14 text-sm outline-none transition focus:border-indigo-600 focus:ring-4 focus:ring-indigo-600/15"
                     autoComplete="new-password"
                     disabled={loading}
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword((v) => !v)}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg border border-transparent px-2.5 py-1 text-xs font-semibold text-slate-600 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-600/15"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg border border-transparent px-2.5 py-1 text-xs font-semibold text-slate-600 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/15"
                   >
                     {showPassword ? 'Hide' : 'Show'}
                   </button>
@@ -119,7 +119,7 @@ export default function RegisterPage() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   type={showPassword ? 'text' : 'password'}
                   placeholder="Re-type your password"
-                  className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/15"
+                  className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-indigo-600 focus:ring-4 focus:ring-indigo-600/15"
                   autoComplete="new-password"
                   disabled={loading}
                 />
@@ -131,14 +131,14 @@ export default function RegisterPage() {
               <button
                 type="submit"
                 disabled={!canSubmit}
-                className="h-11 w-full rounded-xl bg-emerald-600 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-600/20 disabled:cursor-not-allowed disabled:opacity-60"
+                className="h-11 w-full rounded-xl bg-indigo-600 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/20 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading ? 'Creating account...' : 'Create account'}
               </button>
 
               <div className="text-center text-sm text-slate-600">
                 Already have an account?{' '}
-                <Link to="/login" className="font-semibold text-emerald-700 hover:underline">
+                <Link to="/login" className="font-semibold text-indigo-700 hover:underline">
                   Sign in
                 </Link>
               </div>
